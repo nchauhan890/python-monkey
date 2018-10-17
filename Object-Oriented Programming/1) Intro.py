@@ -12,10 +12,10 @@ print(square)
 # Defining an __init__ method:
 
 class Shape:
-     def __init__(self, name, sides, colour=None):
-         self.name = name
-         self.sides = sides
-         self.colour = colour
+    def __init__(self, name, sides, colour=None):
+        self.name = name
+        self.sides = sides
+        self.colour = colour
 
 
 try:
