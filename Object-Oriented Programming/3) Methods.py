@@ -6,14 +6,14 @@ class Shape:
         self.sides = sides
         self.colour = colour
 
-    def getInfo(self):
+    def get_info(self):
         return '{} {} with {} sides'.format(self.colour,
                                             self.name,
                                             self.sides)
 
 
 s = Shape('square', 4, 'green')
-print(s.getInfo())
+print(s.get_info())
 
 
 
@@ -26,7 +26,7 @@ class Shape:
         self.colour = colour
 
     @classmethod
-    def greenShape(cls, name, sides):
+    def green_shape(cls, name, sides):
         print(cls)
         return cls(name, sides, 'green')
 
@@ -36,7 +36,7 @@ class Shape:
         return 0.5 * (a + b) * height
 
 
-green = Shape.greenShape('rectangle', 4)
+green = Shape.green_shape('rectangle', 4)
 print('{} {} with {} sides'.format(green.colour,
                                    green.name,
                                    green.sides))
@@ -49,44 +49,44 @@ print(Shape.trapezium_area(5, 7, 4))
 # and staticmethods
 
 class Shape:
-    def dummyMethod(self, *args):
+    def dummy_method(self, *args):
         print('self:', self)
         print('args:', *args)
 
     @classmethod
-    def dummyClassmethod(cls, *args):
+    def dummy_classmethod(cls, *args):
         print('cls :', cls)
         print('args:', *args)
 
     @staticmethod
-    def dummyStaticmethod(*args):
+    def dummy_staticmethod(*args):
         print('args:', *args)
 
 
 square = Shape()
 
 # calling regular method from instance
-square.dummyMethod('arg')
-print(repr(square.dummyMethod) + '\n')
+square.dummy_method('arg')
+print(repr(square.dummy_method) + '\n')
 
 # calling regular method from class
-Shape.dummyMethod('arg')
-print(repr(Shape.dummyMethod) + '\n')
+Shape.dummy_method('arg')
+print(repr(Shape.dummy_method) + '\n')
 
 
 # calling classmethod from instance
-square.dummyClassmethod('arg')
-print(repr(square.dummyClassmethod) + '\n')
+square.dummy_classmethod('arg')
+print(repr(square.dummy_classmethod) + '\n')
 
 # calling classmethod from class
-Shape.dummyClassmethod('arg')
-print(repr(Shape.dummyClassmethod) + '\n')
+Shape.dummy_classmethod('arg')
+print(repr(Shape.dummy_classmethod) + '\n')
 
 
 # calling staticmethod from instance
-square.dummyStaticmethod('arg')
-print(repr(square.dummyStaticmethod) + '\n')
+square.dummy_staticmethod('arg')
+print(repr(square.dummy_staticmethod) + '\n')
 
 # calling staticmethod from class
-Shape.dummyStaticmethod('arg')
-print(repr(Shape.dummyStaticmethod) + '\n')
+Shape.dummy_staticmethod('arg')
+print(repr(Shape.dummy_staticmethod) + '\n')
